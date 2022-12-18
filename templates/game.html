@@ -1,0 +1,33 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+
+<div class=centerDiv>
+    <h1 class="dark_purple">Play Tic Tac Toe!</h1>
+    <p class = "dark_purple"><b>Player Names:</b></p>
+    <div>Player O: {{session['O']['name']}}</div>
+    <div>Player X: {{session['X']['name']}}</div>
+    <p>
+
+    </p>
+</div>
+<div>
+    <table class="center_table">
+        {% for i in range(3) %}
+            <tr>
+                {% for j in range(3) %}
+                    <td class="light_purple cube">
+                        {% if board[i][j]%}
+                            {{board[i][j]}}
+                        {% else %}
+                        <a href="{{ url_for('game', row=i, col=j) }}">Mark {{ session['turn'] }} here.</a>
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+<div class="centerDiv">
+    <h2>Player {{session['turn']}}'s turn</h2>
+</div>

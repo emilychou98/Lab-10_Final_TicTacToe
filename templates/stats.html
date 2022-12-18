@@ -1,0 +1,29 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+
+<div class=centerDiv>
+    <h1 class='dark_purple'>{{win_msg}}</h1>
+    <h2>Top 5 Leaderboard</h2>
+    <table class="striped_table_rows">
+        <thead class="dark_purple ">
+            <td><b>Player Name</b></td>
+            <td><b>Wins</b></td>
+            <td><b>Losses</b></td>
+            <td><b>Ties</b></td>
+            <td><b>Win/Loss Ratio</b></td>
+        </thead>
+        {% for player in statistics.keys() %}
+        <tr>
+            <td>{{player}}</td>
+            <td>{{statistics[player]['win']}}</td>
+            <td>{{statistics[player]['lose']}}</td>
+            <td>{{statistics[player]['draw']}}</td>
+            <td>{{statistics[player]['win_loss_ratio']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<div><i>*Win Loss Ratio is calculated by (Wins-losses)/Total Games Played</i></div>
+<p style="margin-bottom:3cm;"></p>
+<div class="centerDiv light_purple"><a href="{{ url_for('index') }}">Player Again</a></div>

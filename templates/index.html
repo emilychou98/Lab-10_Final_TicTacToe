@@ -1,0 +1,26 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+
+<div class=centerDiv>
+    <h1 class="dark_purple">Welcome to Emily's Tic Tac Toe</h1>
+
+    <form action="{{ url_for("index")}}" method="post">
+        <h2 class="dark_purple">Number of players:</h2>
+        <input type="radio" id="Singleplayer" name="player_type" value="singleplayer" checked="checked">
+        <label for="Singleplayer">Singleplayer</label>
+        <input type="radio" id="Multiplayer" name="player_type" value="multiplayer">
+        <label for="Multiplayer">Multiplayer</label>
+
+        <h2 class="dark_purple">Player Names:</h2>
+        <div>If you are not a Bot, don't name yourself Bot please</div><p></p>
+        <label for = "player1_name">Player 1 Name</label>
+        <input type="text" id="player1_name" name="player1_name" pattern="^(?!Bot$).*">
+        <p></p>
+        <label for = "player2_name">Player 2 Name</label>
+        <input type="text" id="player2_name" name="player2_name" pattern="^(?!Bot$).*">
+
+        <h2 class="dark_purple">Ready?</h2>
+        <button type="submit">I'm Ready, Start Game!</button>
+    </form>
+</div>

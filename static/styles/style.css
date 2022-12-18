@@ -1,0 +1,41 @@
+.important{
+    font-size: 200%
+}
+
+img {
+    margin: auto;
+    display: block;
+  }
+
+.centerdiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+.cube{
+    width: 55px;
+    height: 55px;
+    padding: 0px;
+    margin: 0px;
+    text-align: center
+}
+
+.center_table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.striped_table_rows tbody
+tr:nth-child(even){background-color:#4a2e8345}
+
+.dark_purple{
+    background-color:#4a2e83;
+    color: aliceblue;
+}
+
+.light_purple{
+    background-color:#c7b6ea;
+    color: rgb(62, 62, 62);
+}
